@@ -1,0 +1,671 @@
+
+@import url(//fonts.googleapis.com/css?family=Droid+Sans:400,700);
+@import url(//fonts.googleapis.com/css?family=Roboto+Condensed:400,700);
+@import "common.less";
+
+// Config
+@arrow-size: 50px;
+
+body {
+	font-family: 'Droid Sans', sans-serif;
+}
+
+h1, h2 {
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+
+/////////////////////////////////////////////
+// Styling
+/////////////////////////////////////////////
+
+.invert {
+	background-color: #003366;
+	color: #fff;
+}
+
+.flag-active {
+	color: #4ACA42;
+	&::before {
+	    position: relative;
+	    top: 1px;
+	    display: inline-block;
+	    font-family: 'Glyphicons Halflings';
+	    font-style: normal;
+	    font-weight: 400;
+	    line-height: 1;
+	    -webkit-font-smoothing: antialiased;
+	    -moz-osx-font-smoothing: grayscale;
+	    content: "\e013";
+		margin-right: 4px;
+	}
+}
+
+.full-width {
+	width: 100%;
+}
+
+.col-border-left {
+	border-left: solid 1px #EEE;
+}
+
+body.fixed-fullscreen {
+
+	overflow: hidden;
+
+	div.fullscreen {
+		position: absolute;
+		left: 0; right: 0;
+		top: 0; bottom: 0;
+		background-color: #EEE;
+	}
+
+}
+
+body {
+	.experiment {
+		.pointer-events(none);
+		background: url(../img/experiment.png) no-repeat center center;
+		width: 128px;
+		height: 128px;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+}
+
+div.desc-intro .dynamic-content {
+	height: 100%;
+}
+.back-target {
+	background: url(../img/back-target.png) no-repeat center bottom;
+	min-height: 100%;
+}
+
+/////////////////////////////////////////////
+// Ghost button
+/////////////////////////////////////////////
+
+.btn.btn-ghost{
+	background: none;
+	border: solid 1px #fff;
+
+	&:hover {
+		color: inherit;
+		background-color: rgba(255,255,255,0.2);
+	}
+	&:focus {
+		color: inherit;
+	}
+}
+
+/////////////////////////////////////////////
+// Arrow graphic
+/////////////////////////////////////////////
+
+.btn-arrow {
+	background: none;
+	width: @arrow-size;
+	height: @arrow-size;
+	display: inline-block;
+
+	&:after {
+		content: " ";
+		border: 1px #fff;
+		border-style: none solid solid none;
+		width: (@arrow-size / 1.414);
+		height: (@arrow-size / 1.414);
+		display: block;
+		.transform( rotate(45deg) translateX( (@arrow-size - (@arrow-size / 1.414)) / 2 ) );
+	}
+}
+
+/////////////////////////////////////////////
+// Next arrow between topics
+/////////////////////////////////////////////
+
+.next-arrow {
+	position: absolute;
+	bottom: 10px;
+	left: 50%;
+	.transform( translateX(-50%) );
+	.transition( opacity 0.5s );
+}
+
+body.no-top-scroll {
+	.next-arrow {
+		opacity: 0;
+	}
+}
+
+
+/////////////////////////////////////////////
+// Navigation bar
+/////////////////////////////////////////////
+
+.navbar {
+	background-color: none;
+	.transition( background-color 0.5s );
+
+	a {
+		color: #fff;
+	}
+
+	.nav {
+		a:hover {
+			background-color: rgba(0,0,0,0.4);
+		}
+	}
+}
+
+body.no-top-scroll {
+	.navbar {
+		background-color: #404040;
+		.nav {
+			a:hover {
+				background-color: rgba(255,255,255,0.4);
+			}
+		}
+	}
+}
+
+.navbar-pad {
+	padding-top: 50px;
+}
+
+/////////////////////////////////////////////
+// ------------------------------------------
+// #CREDITS - Credits system interface
+// ------------------------------------------
+/////////////////////////////////////////////
+
+#credits {
+
+	div.banner {
+		width: 200px;
+		height: 185px;
+		position: relative;
+		margin: 30px auto 10px;
+
+		div.banner-image {
+			position: absolute;
+			width: 128px; height: 128px;
+			left: 36px; top: 0;
+			background-color: #eee;
+			background-position: center center;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-image: url(../img/anonymous.png);
+			.border-radius( 64px );
+		}
+		div.banner-leaves {
+			position: absolute;
+			width: 200px; height: 165px;
+			left: 0px; top: 0px;
+			background: url(../img/award.png) no-repeat center center;
+		}
+	}
+
+}
+
+/////////////////////////////////////////////
+// ------------------------------------------
+// #CHALLENGE - Challenge portal
+// ------------------------------------------
+/////////////////////////////////////////////
+
+.popover {
+	max-width: inherit;
+}
+
+#challenge-popup-status {
+
+	position: relative;
+	width: 450px;
+	height: 200px;
+
+	ul.list-status {
+		li > span.label {
+			width: 50px;
+			display: inline-block;
+			vertical-align: absmiddle;
+		}
+	}
+
+	div.progress {
+		margin-bottom: 5px;
+	}
+
+	div.status-text {
+		margin-bottom: 5px;
+		font-size: 0.9em;
+		height: 20px;
+		overflow: hidden;
+	}
+
+	div.slider-host {
+		margin-bottom: 4px;
+		height: 24px;
+
+		&>input, &>div.slider {
+			width: 76%;
+			float: left;
+			margin-top: 4px;
+
+			.ui-slider-handle {
+				border: solid 1px #888 !important;
+			}
+		}
+		&>div.text {
+			float: right;
+			width: 19%;
+			text-align: center;
+		}
+	}
+
+	div.popover-failure {
+		position: absolute;
+		left: 10px; top: 10px; right: 10px; bottom: 10px;
+		z-index: 4;
+	}
+
+}
+
+#challenge {
+	background: url(../img/ambient-back.jpg) no-repeat center bottom;
+	background-size: cover;
+
+	div.frame-status {
+
+		div.container {
+			margin-top: 20px;
+		}
+
+		div.panel {
+			position: relative;
+			margin-bottom: 10px;
+
+			div.panel-alert, div.panel-warn {
+				position: absolute;
+				left: -1px; top: -1px; 
+				right: -1px; bottom: -1px;
+				border-radius: 4px;
+				display: none;
+				padding-left: 50px;
+
+				h1 {
+					margin-top: 60px;
+					margin-bottom: 4px;
+					&:before {
+						font-family: 'Glyphicons Halflings';
+						font-style: normal;
+						font-weight: 400;
+						font-size: 25px;
+						margin-right: 5px;
+						vertical-align: baseline;
+						width: 32px;
+						display: inline-block;
+						padding-left: 4px;					
+					}
+				}
+				p {
+					margin-left: 40px;
+				}
+			}
+
+			div.panel-heading {
+				position: relative;
+				text-align: right;
+
+				span#gauge-frame-title {
+					line-height: 30px;
+					height: 30px;
+					float: left !important;
+					text-align: left;
+					font-weight: bold;
+				}
+
+				a#acc-name {
+					line-height: 30px;
+					height: 30px;
+				}
+				div#acc-picture {
+					width: 30px;
+					height: 30px;
+					line-height: 30px;
+					vertical-align: middle;
+					background-repeat: no-repeat;
+					background-position: center center;
+					background-size: cover;
+					display: inline-block;
+					border-radius: 6px;
+				}
+
+				div.back-progress {
+					visibility: hidden;
+					position: absolute;
+					left: 0; top: 0;
+					width: 50%;
+					height: 50px;
+					overflow: hidden;
+
+					div.back-animation {
+						background-image: url(../img/progress.gif);
+						opacity: 0.4;
+						position: absolute;
+						left: 50%; top: 50%;
+						width: 200%;
+						height: 1024px;
+						.transform( rotate(25deg) translate(-75%,-25%) );
+					}
+				}
+
+			}
+
+			div.panel-body {
+				height: 155px;
+				overflow: hidden;
+				padding: 5px 15px;
+
+				div.widgets {
+					display: block;
+					width: 100%;
+
+					div.row {
+						text-align: center;
+
+						h3 {
+							margin: 5px 0;
+						}
+
+						div.details {
+							color: #666;
+							font-size: 11px;
+							margin: 5px 0 10px;
+							height: 42px;
+							overflow: hidden;
+							display: none;
+						}
+
+						.ui-dial {
+							height: 80px;
+							margin: 0 auto;
+
+							.rundial-value {
+								line-height: 47px;
+								font-size: 25px;
+							}
+						}
+
+					}
+
+				}
+
+				div.dynamic-content {
+					position: absolute;
+					left: 0; bottom: 0;
+					width: 100%;
+					text-align: center;
+					font-size: 14px;
+					img {
+						width: 32px;
+						height: 32px;
+					}
+				}
+
+			}
+		}
+
+		&.progress-active {
+			div.panel div.panel-heading div.back-progress {
+				visibility: visible;
+			}
+		}
+		&.progress-error {
+			div.widgets {
+				display: none;
+			}
+
+			div.panel {
+				div.panel-alert {
+					background-color: #e74c3c;
+					border-color: #e74c3c;
+					color: #fff;
+					display: block;
+					h1 {
+						&:before {
+							content: "\e107";
+							opacity: 0.5;
+						}
+					}
+				}
+			}
+
+		}
+		&.progress-warn {
+			div.widgets {
+				display: none;
+			}
+
+			div.panel {
+				div.panel-warn {
+					background-color: #3498db;
+					border-color: #2980b9;
+					color: #fff;
+					display: block;
+					h1 {
+						&:before {
+							content: "\2a";
+							opacity: 0.5;
+						}
+					}
+				}
+			}
+
+		}
+
+
+	} // frame-status
+
+	div.frame-description {
+		text-align: center;
+
+		.well {
+			position: relative;
+			overflow-y: auto;
+			overflow-x: hidden;
+
+			> div {
+				position: absolute;
+				left: 5px; right: 5px;
+				top: 5px; bottom: 5px;
+			}
+
+			div.desc-starting {
+				background: url(../img/wm-loading.png) no-repeat left top;
+				padding-left: 270px;
+				text-align: left;
+			}
+
+			div.desc-waitjob {
+				background: url(../img/wm-landing.png) no-repeat left top;
+				padding-left: 270px;
+				text-align: left;
+			}
+
+			div.desc-idle {
+				background: url(../img/wm-lounge.png) no-repeat left top;
+				padding-left: 270px;
+				text-align: left;
+			}
+
+			div.desc-recovery {
+				background: url(../img/wm-chill.png) no-repeat left top;
+				padding-left: 270px;
+				text-align: left;
+
+				ul {
+					margin: 20px 0;
+					li {
+						margin: 5px 5px;
+					}
+				}
+			}
+
+			div.desc-live {
+				overflow: hidden;
+
+				ul.nav-tabs > li > a {
+					padding: 5px;
+				}
+				div.tab-content {
+					position: absolute;
+					left: 0;
+					top: 32px;
+					bottom: 0;
+					right: 0;
+
+					&.tab-pane-full {
+						top: 0;
+					}
+
+					div.tab-pane {
+						height: 100%;
+						> * {
+							height: 100%;
+						}
+						iframe {
+							width: 100%;
+							height: 100%;
+						}
+					}
+
+				}
+				div.dynamic-content {
+					position: absolute;
+					bottom: 0px;
+					width: 100%;
+					font-size: 15px;
+					img {
+						background-color: #F5F5F5;
+						border-radius: 48px;
+						margin-right: 10px;
+					}
+				}
+				div.status-flag {
+					position: absolute;
+					left: 0px;
+					bottom: 5px;
+				}
+			}
+
+			div.desc-intro {
+
+				div.arrow-center {
+					position: absolute;
+					display: block;
+					width: 83px; height: 109px;
+					left: 50%; bottom: 4px;
+					background: url(../img/arrow-down.png) no-repeat center center;
+					.transform(translate(-42px, 0px));
+				}
+
+			}
+
+		}
+
+		div.valign-middle {
+			padding-top: 80px;
+		}
+
+	}
+
+	div.button-footer {
+		position: absolute;
+		bottom: 0; left: 0; right: 0;
+		height: 60px;
+
+		.btn-lg-w {
+			width: 250px;
+		}
+
+	}
+
+	div.disclaimer-footer {
+		position: absolute;
+		right: 10px; bottom: 5px;
+		color: #999;
+		a {
+			font-size: 12px;
+		}
+	}
+
+	div.social-footer {
+	    position: absolute;
+	    left: 10px;
+	    bottom: 12px;
+	    .stButton {
+	    	margin-left: 0px;
+	    	margin-right: 1px;
+	    }
+	}
+
+}
+
+@media(min-height: 600px) {
+	#gauge-frame {
+		div.panel-body {
+			height: 205px !important;
+
+			div.widgets div.details {
+				display: block !important;
+			}
+		}
+	}
+}
+
+/////////////////////////////////////////////
+// ------------------------------------------
+// #HOME - Home screen
+// ------------------------------------------
+/////////////////////////////////////////////
+
+#home {
+
+	position: relative;
+	color: #fff;
+
+	background: no-repeat center center url(../img/lhc-2.jpg);
+	background-size: cover;
+
+	.content {
+		left: 0; top: 0; width: 100%; height: 100%;
+		position: absolute;
+		background: rgba(16,16,16,0.7);
+
+		.spacer {
+			height: 30%;
+		}
+
+		.hero {
+			h1 {
+				font-size: 63px;
+			}
+			p {
+				font-size: 21px;
+			}
+			button {
+				font-size: 18px;
+			}
+
+			.users-active {
+				color: #FFCC00;
+			}
+
+			max-width: 80%;
+			margin: 0 auto 0;
+
+		}		
+	}
+
+}

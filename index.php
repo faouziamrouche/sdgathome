@@ -35,6 +35,8 @@
 			})(window,document,'script','dataLayer','GTM-5JPWNS');
 		</script>
 		
+		
+		
 		<section id="intro" class="hero">
 			<div class="container">
 				<div class="row">
@@ -42,10 +44,11 @@
 				</div>
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center inner">
-						<div class="animatedParent c-glow-black">
-							<h1 class="animated fadeInDown">CERN Public Computing Challenge 2015</h1>
-							<!-- <p class="animated fadeInUp">Getting the world involved in science</p> -->
+						<div class="animatedParent "> <!--c-glow-black-->
+							<h1 style="color:#00BFFF;font-size:50px;margin-top:20px;margin-bottom:10px;" >SDG@Home</h1><!--class="animated fadeInDown"-->
+							<!--<p style="color:black;font-weight:bold;font-size:20px;">Getting the world involved in science</p><!--class="animated fadeInUp"-->
 						</div>
+						<!--
 						<div class="black-frame">
 							<div class="black-frame-text-big">
 							Help scientists simulate particle collisions. 
@@ -53,6 +56,7 @@
 							<!-- </div>
 							
 							<div class="black-frame-text-big"> -->
+							<!--
 							Contribute your computer's power.	
 							
 							</br>
@@ -132,14 +136,18 @@
 			
 
 
-
+-->
 							
 							
 						</div>
 					</div>
 				</div>
+				<br><br><br><br><br><br><br><br><br><br>
+				<!--<div class="row">
+					<div class="col-md-6 col-md-offset-3 text-center"><a href="#join" class="start-computing-btn btn-scroll">Join Now </a><a href="#about" style="margin-left:50px;" class="start-computing-btn btn-scroll">Learn more</a></div>
+				</div>-->
 				<div class="row">
-					<div class="col-md-6 col-md-offset-3 text-center"><a href="#join" class="start-computing-btn btn-scroll">Join Now </a><a href="#about" style="margin-left:10px" class="learn-more-btn btn-scroll">Learn more</a></div>
+				<div class="col-md-4 col-md-offset-1" ><a href="#join" class="btn btn-primary btn-lg" >Join Now </a></div><div class="col-md-2 col-md-offset-5"><a href="#about" class="btn btn-info btn-lg">Learn more</a></div>
 				</div>
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center">
@@ -147,15 +155,16 @@
 					</div>
 				</div>
 			</div>
+			
 		</section>
-
-		<!-- Navigation-->
+		
+			<!-- Navigation-->
 		<div id="navigation">
 			<nav role="navigation" class="navbar navbar-custom">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-2">
-							<div class="site-logo"><a href="#" class="brand"><img src="img/CERNLogo.jpg" height="50px"></a></div>
+							<div class="site-logo"><a href="#" class="brand"><img src="img/GTI-logo-gear_page_1.png" height="50px"></a></div>
 						</div>
 						<div class="col-md-10">
 							<!-- Brand and toggle get grouped for better mobile display-->
@@ -183,6 +192,26 @@
 		</div>
 
 		<!-- /Navigation--><!-- Section: about-->
+
+			<div id="infog" style="background: url(img/infograph-2.png) ; height: 100%; width:100%; background-repeat:no-repeat;background-position:center;background-size: 85% 45%; ">
+			
+			<h1  style="font-weight:bold;position:relative;left:10%;top:20%;">
+			How to help ?
+			</h1>
+			<div style="position:relative; top:65%;">
+			
+			<h3 style="position:absolute; left:5%;">Create an account</h3>
+			
+			<h3 style="position:absolute; left:32%;">Install Boinc client</h3>
+
+			<h3 style="position:absolute; left:55%;">Choose a project</h3>
+
+			<h3 style="position:absolute; left:80%;">Let it work</h3>
+
+			</div>
+			
+			
+			</div>
 		<section id="about" class="home-section color-dark bg-white">
 			<div class="container marginbot-50">
 				<div class="row">
@@ -214,8 +243,7 @@
 							</p>
 
 							<p>Below you can see the CreditPiggy goals for the whole challenge:</p>
-							<iframe frameborder="0" src="//creditpiggy.cern.ch/embed/status.website/?webid=efc98cfc58eb4526b2babbbc871bec11&amp;bg=fff" style="width: 100%; height: 270px"></iframe>
-
+							
 							<p>
 								We’ll be sharing our progress towards these goals throughout the challenge, together with details about your own contribution. And if you have any questions, about the science, the software or the social aspects of this Challenge, don’t hesitate to post them in the forum at the bottom of this page.	
 							</p>
